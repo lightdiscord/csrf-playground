@@ -1,0 +1,13 @@
+<div>
+  <h2>Messages</h2>
+
+  <% if (messages.length == 0) { %>
+    <p>There is no message yet! <i>Maybe from an insecure website you can create some...</i></p>
+  <% } else { %>
+    <ul>
+      <% for (const { author, message } of messages) { %>
+        <li>A message from <%= author %>: <%= message %></li>
+      <% } %>
+    </ul>
+  <% } %>
+</div>

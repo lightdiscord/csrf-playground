@@ -21,6 +21,9 @@
   "homepage": "https://github.com/lightdiscord/csrf-playground#readme",
   "dependencies": {
     "esm": "^3.2.25",
-    "koa": "^2.11.0"
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.3.0",
+    "koa-route": "^3.2.0"
   }
 }
