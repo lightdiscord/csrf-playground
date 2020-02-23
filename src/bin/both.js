@@ -1,4 +1,4 @@
-const { spawn } = require("child_process");
+import { spawn } from "child_process";
 
 function run(script) {
   return spawn("npm", ["run", script], { stdio: "inherit" });
