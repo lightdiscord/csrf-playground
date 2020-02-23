@@ -1,0 +1,25 @@
+{
+  "name": "csrf-playground",
+  "version": "0.1.0",
+  "description": "CSRF Playground with a trusted website and an attacker website",
+  "main": "src/bin/both.js",
+  "scripts": {
+    "start": "node src/bin/both",
+    "start:trusted": "node src/bin/trusted",
+    "start:attacker": "node src/bin/attacker",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lightdiscord/csrf-playground.git"
+  },
+  "author": "Arnaud Pascal <root@arnaud.sh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lightdiscord/csrf-playground/issues"
+  },
+  "homepage": "https://github.com/lightdiscord/csrf-playground#readme",
+  "dependencies": {
+    "koa": "^2.11.0"
+  }
+}
