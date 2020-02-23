@@ -15,7 +15,8 @@ function create(context) {
     context.throw(400, "No message found");
   }
 
-  messages.push({ message, author: context.state.username });
+  context.state.messages.push({ message, author: context.state.username });
+  context.body = "Message pushed!";
 }
 
 function multiple(app, method, route, middlewares) {
@@ -32,6 +33,6 @@ function store(context, next) {
 export function register(app) {
   multiple(app, router.get, "/", [store, index]);
 
-  multiple(app, router.get, "/api/messages/unprotected", [needAuth, create]);
+  multiple(app, router.post, "/api/messages/unprotected", [needAuth, store, create]);
 }
 

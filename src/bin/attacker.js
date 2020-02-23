@@ -1,11 +1,21 @@
 import Koa from "koa";
+import ejs from "koa-ejs";
+
+import { resolve } from "path";
 
 const app = new Koa();
 const port = 8842;
 const trustedPort = 8800;
 
-app.use(ctx => {
-  ctx.body = "H3770 w0r1d!";
+ejs(app, {
+  root: resolve(__dirname, "..", "views"),
+  layout: "attacker-layout"
+});
+
+app.use(async (context) => {
+  context.state.victim = `http://localhost:${trustedPort}/api/messages`;
+
+  await context.render("forms");
 });
 
 app.listen(port);
